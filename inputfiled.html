@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        button{
+        button {
             padding: 5px;
             margin: 5px;
         }
     </style>
 </head>
+
 <body>
-    <h1>Input Fileds</h1>
-    <p id="displytext" >Defeult Test</p>
-    <input id="inputfiled" type="text">
+    <div id="container">
+        <h1>Comments Post</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque natus, voluptatibus dignissimos enim quisquam
+            eos praesentium quas tempora maiores dolor!</p>
+    </div>
+    <textarea id="inputfiled" cols="50" rows="8"></textarea>
     <br>
     <button id="upload">upload</button>
 
@@ -22,20 +27,26 @@
     <script src="./js/input.js"></script>
 
     <script>
-        const uploadbtn = document.getElementById('upload').addEventListener('click', function(){
-            
+        const uploadbtn = document.getElementById('upload').addEventListener('click', function () {
+
             const inputText = document.getElementById('inputfiled');
             const value = inputText.value;
-            
-            const displyText = document.getElementById('displytext');
-            displyText.innerText = value;
-            inputText.value = ''
-            
+            console.log(value);
             
 
+            const Commentsfiled = document.getElementById('container');
+            console.log(Commentsfiled);
             
+
+            const p= document.createElement('p');
+            p.innerText = value ;
+
+            Commentsfiled.appendChild(p);
+            inputText.value = ''
+
         })
     </script>
-    
+
 </body>
+
 </html>

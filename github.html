@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Hub Delete Events</title>
+</head>
+
+<body>
+    <h1>Git Hub Delete Events</h1>
+    <p id="descrtion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, quae.</p>
+
+    <br>
+    
+    <input id="confarmationText" type="text" placeholder="Please inter Delete" >
+    <button id="btnDelet" disabled>Delete</button>
+
+    <script>
+        document.getElementById('confarmationText').addEventListener('keyup', function(event){
+            const text = event.target.value;
+            
+            const deletebtn =document.getElementById('btnDelet')
+            if (text === 'delete'){
+                deletebtn.removeAttribute('disabled')
+
+
+            }
+            else{
+                deletebtn.setAttribute('disabled', true)
+            }
+            
+        } )
+
+        document.getElementById('btnDelet').addEventListener('click', function(){
+            const comment = document.getElementById('descrtion');
+            comment.style.display = 'none';
+            const inputText =document.getElementById('confarmationText');
+            inputText.value = '';
+            
+        })
+
+
+
+    </script>
+
+
+</body>
+
+</html>
